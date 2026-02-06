@@ -328,14 +328,39 @@ linux-ssh-splunk-soc-lab/
 
 ---
 
-## 👨‍💻 Author
-NATTO MUNI CHAKMA
-**SOC Lab Project — Splunk SIEM**
+## 👤 Author
 
-Built for cybersecurity detection engineering practice.
+**Natto Muni Chakma**  
+B.Tech (Computer Science & Engineering)  
+Cybersecurity & SIEM Enthusiast  
+
+- 💻 Interested in Security Operations Center (SOC)
+- 🔍 Log Analysis & Incident Detection
+- 🛡️ SIEM, Splunk, Network & System Security
+
+📫 GitHub: https://github.com/NATTOMR  
 
 ---
 
-## ⭐ Acknowledgment
+## 📚 References
 
-This lab simulates real SOC monitoring workflows used in enterprise environments to detect unauthorized access and authentication attacks.
+1. **Splunk Official Documentation**  
+   https://docs.splunk.com
+
+2. **Splunk Search Processing Language (SPL) Reference**  
+   https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual
+
+3. **Splunk Dashboard Studio Guide**  
+   https://docs.splunk.com/Documentation/Splunk/latest/DashStudio/AboutDashboardStudio
+
+4. **Linux Authentication Logs (auth.log)**  
+   https://man7.org/linux/man-pages/man5/syslog.conf.5.html
+
+5. **SOC & SIEM Concepts**  
+   https://www.splunk.com/en_us/solutions/siem.html
+
+6. **MITRE ATT&CK Framework (Attack Techniques Reference)**  
+   https://attack.mitre.org
+
+---
+
