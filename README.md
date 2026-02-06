@@ -1,4 +1,7 @@
-![SOC Banner](./screenshots/Linux SSH attack monitoring with Splunk.png)
+<p align="center">
+  <img src="./screenshots/banner.png" alt="SOC Banner"/>
+</p>
+
 
 # 🛡️ Linux SSH Attack Monitoring — Splunk SIEM
 
