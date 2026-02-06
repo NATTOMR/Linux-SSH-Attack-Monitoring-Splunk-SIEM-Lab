@@ -78,6 +78,13 @@ Dashboards + Detection Analytics
 ---
 ![image](https://github.com/NATTOMR/Linux-SSH-Attack-Monitoring-Splunk-SIEM-Lab/blob/main/Lab%20Architecture.jpg)
 
+<p align="center">
+  <img src="./screenshots/Architecture.jpg"
+       alt="Linux SSH Attack Monitoring — Splunk SIEM"
+       width="500"
+       height="200"/>
+</p>
+
 ## 🎯 Objectives
 
 * Simulate SSH attacks from attacker machine
@@ -261,7 +268,7 @@ source="/var/log/auth.log"
 
 ### Authentication Metrics & Attacker Analysis
 
-![Dashboard Screenshot 2](./screenshots/dashboard_metrics.png)
+![Dashboard Screenshot 2](https://github.com/NATTOMR/Linux-SSH-Attack-Monitoring-Splunk-SIEM-Lab/blob/main/dashboard-2.png)
 
 ---
 
@@ -322,7 +329,7 @@ linux-ssh-splunk-soc-lab/
 ---
 
 ## 👨‍💻 Author
-
+NATTO MUNI CHAKMA
 **SOC Lab Project — Splunk SIEM**
 
 Built for cybersecurity detection engineering practice.
