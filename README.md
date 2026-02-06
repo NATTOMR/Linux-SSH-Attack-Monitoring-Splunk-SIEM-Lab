@@ -1,8 +1,8 @@
 <p align="center">
   <img src="./screenshots/banner.png"
        alt="Linux SSH Attack Monitoring — Splunk SIEM"
-       width="900"
-       height="300"/>
+       width="1000"
+       height="400"/>
 </p>
 
 
