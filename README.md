@@ -1,3 +1,5 @@
+![SOC Banner](./screenshots/Linux s-splunk-banner.png)
+
 # 🛡️ Linux SSH Attack Monitoring — Splunk SIEM
 
 Real-world SOC lab simulating SSH brute-force attacks and detecting authentication threats using Splunk dashboards and SPL analytics.
