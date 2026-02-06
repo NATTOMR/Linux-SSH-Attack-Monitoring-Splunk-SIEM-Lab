@@ -2,7 +2,7 @@
   <img src="./screenshots/banner.png"
        alt="Linux SSH Attack Monitoring — Splunk SIEM"
        width="900"
-       height="250"/>
+       height="300"/>
 </p>
 
 
