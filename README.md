@@ -76,6 +76,7 @@ Dashboards + Detection Analytics
 ```
 
 ---
+![image](https://github.com/NATTOMR/Linux-SSH-Attack-Monitoring-Splunk-SIEM-Lab/blob/main/Lab%20Architecture.jpg)
 
 ## 🎯 Objectives
 
