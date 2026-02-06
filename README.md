@@ -255,7 +255,7 @@ source="/var/log/auth.log"
 
 ### SSH SOC Dashboard Overview
 
-![Dashboard Screenshot 1](./screenshots/dashboard_overview.png)
+![Dashboard Screenshot 1](https://github.com/NATTOMR/Linux-SSH-Attack-Monitoring-Splunk-SIEM-Lab/blob/main/dashboard-1.png)
 
 ---
 
