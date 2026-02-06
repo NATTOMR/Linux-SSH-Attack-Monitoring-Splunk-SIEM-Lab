@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="./screenshots/banner.png" alt="SOC Banner"/>
+  <img src="./screenshots/banner.png" alt="SOC Banner" width="800"/>
 </p>
+
 
 
 # 🛡️ Linux SSH Attack Monitoring — Splunk SIEM
