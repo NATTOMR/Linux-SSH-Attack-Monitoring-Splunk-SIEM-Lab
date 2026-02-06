@@ -1,1 +1,283 @@
-# Linux-SSH-Attack-Monitoring-Splunk-SIEM-Lab
+# Linux SSH Attack Monitoring — Splunk SIEM Lab
+
+## 📌 Project Overview
+
+This project demonstrates a real-world **SOC (Security Operations Center) detection lab** built using **Splunk SIEM** to monitor and analyze SSH authentication activity on a Linux victim machine.
+
+The lab simulates attacker behavior from Kali Linux and detects it on an Ubuntu system using log ingestion, SPL queries, and security dashboards.
+
+---
+
+## 🧪 Lab Architecture
+
+```
+Kali Linux (Attacker)
+        │
+        │  SSH Brute Force / Login Attempts
+        ▼
+Ubuntu Linux (Victim)
+        │
+        │  /var/log/auth.log
+        ▼
+Splunk Enterprise (SIEM)
+        │
+        ▼
+Dashboards + Detection Analytics
+```
+
+---
+
+## 🎯 Objectives
+
+* Simulate SSH attacks from attacker machine
+* Monitor authentication logs on victim machine
+* Detect failed & successful logins
+* Identify attacker IP address
+* Analyze targeted usernames
+* Build SOC-style security dashboards
+
+---
+
+## 🖥️ Lab Environment
+
+| Component        | Technology              |
+| ---------------- | ----------------------- |
+| Attacker Machine | Kali Linux              |
+| Victim Machine   | Ubuntu 24.04            |
+| SIEM Platform    | Splunk Enterprise 9.2.4 |
+| Log Source       | /var/log/auth.log       |
+| Virtualization   | VirtualBox              |
+
+---
+
+## ⚙️ Step 1 — Splunk Installation
+
+Splunk Enterprise was installed on the Ubuntu victim machine using the `.deb` package.
+
+Access URL:
+
+```
+http://<ubuntu-ip>:8000
+```
+
+---
+
+## 📂 Step 2 — Log Ingestion
+
+Authentication logs were ingested into Splunk:
+
+**Path Monitored**
+
+```
+/var/log/auth.log
+```
+
+**Method**
+
+Settings → Add Data → Monitor → Files & Directories
+
+**Sourcetype**
+
+```
+linux_secure / linux_source
+```
+
+---
+
+## 🧨 Step 3 — Attack Simulation (Kali → Ubuntu)
+
+### Failed Login Attempts
+
+```bash
+ssh wronguser@<ubuntu-ip>
+ssh fakeuser@<ubuntu-ip>
+```
+
+### Successful Login
+
+```bash
+ssh natto@<ubuntu-ip>
+```
+
+These generated authentication logs inside:
+
+```
+/var/log/auth.log
+```
+
+---
+
+## 🔍 Step 4 — SPL Detection Queries
+
+### Failed Logins
+
+```spl
+source="/var/log/auth.log" "Failed password"
+```
+
+### Successful Logins
+
+```spl
+source="/var/log/auth.log" "Accepted password"
+```
+
+### Combined Authentication Activity
+
+```spl
+source="/var/log/auth.log"
+("Failed password" OR "Accepted password")
+```
+
+---
+
+## 📊 Step 5 — Dashboard Analytics
+
+The following SOC panels were created:
+
+---
+
+### 🔢 Single Value Metrics
+
+**Total Successful Logins**
+
+```spl
+source="/var/log/auth.log"
+"Accepted password"
+| stats count as "Successful Logins"
+```
+
+**Total Failed Logins**
+
+```spl
+source="/var/log/auth.log"
+"Failed password"
+| stats count as "Failed Logins"
+```
+
+---
+
+### 🌍 Attacker IP Detection
+
+```spl
+source="/var/log/auth.log"
+"Failed password"
+| rex "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+| sort -count
+```
+
+---
+
+### 👤 Targeted Usernames
+
+```spl
+source="/var/log/auth.log"
+"Failed password"
+| rex "for (invalid user )?(?<user>\w+)"
+| stats count by user
+| sort -count
+```
+
+---
+
+### 📈 Login Timeline
+
+```spl
+source="/var/log/auth.log"
+("Failed password" OR "Accepted password")
+| eval status=if(searchmatch("Accepted password"),"Success","Failed")
+| timechart count by status
+```
+
+---
+
+### 🧑‍💻 Session Monitoring
+
+```spl
+source="/var/log/auth.log"
+("session opened" OR "session closed")
+```
+
+---
+
+## 📸 Dashboard Screenshots
+
+### SSH SOC Dashboard Overview
+
+![Dashboard Screenshot 1](./screenshots/dashboard_overview.png)
+
+---
+
+### Authentication Metrics & Attacker Analysis
+
+![Dashboard Screenshot 2](./screenshots/dashboard_metrics.png)
+
+---
+
+## 🧠 Key Security Findings
+
+* Multiple failed login attempts detected
+* Successful login observed after attempts
+* Attacker IP identified: `192.168.56.104`
+* Multiple usernames targeted
+* Authentication activity visualized via timeline
+
+---
+
+## 🛡️ SOC Use Cases Demonstrated
+
+* SSH Brute Force Detection
+* Credential Stuffing Monitoring
+* Account Compromise Identification
+* Attacker Attribution
+* Login Trend Analysis
+
+---
+
+## 🚀 Skills Gained
+
+* Splunk SIEM Administration
+* Log Ingestion & Parsing
+* SPL Query Writing
+* Dashboard Development
+* Threat Detection Engineering
+* Linux Log Analysis
+
+---
+
+## 📁 Project Structure
+
+```
+linux-ssh-splunk-soc-lab/
+│
+├── README.md
+├── screenshots/
+│   ├── dashboard_overview.png
+│   └── dashboard_metrics.png
+└── queries/
+    └── detection_spl.txt
+```
+
+---
+
+## 🔮 Future Enhancements
+
+* Geo-location attacker mapping
+* Brute force alert automation
+* Privilege escalation detection
+* File integrity monitoring (auditd)
+* Multi-host log forwarding
+
+---
+
+## 👨‍💻 Author
+
+**SOC Lab Project — Splunk SIEM**
+
+Built for cybersecurity detection engineering practice.
+
+---
+
+## ⭐ Acknowledgment
+
+This lab simulates real SOC monitoring workflows used in enterprise environments to detect unauthorized access and authentication attacks.
