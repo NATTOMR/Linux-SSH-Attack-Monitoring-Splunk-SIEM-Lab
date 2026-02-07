@@ -9,7 +9,6 @@
 
 # 🛡️ Linux SSH Attack Monitoring — Splunk SIEM
 
-Real-world SOC lab simulating SSH brute-force attacks and detecting authentication threats using Splunk dashboards and SPL analytics.
 
 ---
 
@@ -28,16 +27,17 @@ Authentication logs are ingested, analyzed, and visualized to detect brute-force
 
 ---
 
-## 🔍 Key Features
+## 🎯 Objectives
 
-• Failed Login Detection
-• Successful Login Monitoring
-• Attacker IP Identification
-• Targeted Username Analysis
-• Authentication Timeline Visualization
-• Interactive SOC Dashboard
+* Simulate SSH attacks from attacker machine
+* Monitor authentication logs on victim machine
+* Detect failed & successful logins
+* Identify attacker IP address
+* Analyze targeted usernames
+* Build SOC-style security dashboards
 
 ---
+
 
 ## 🧪 Lab Stack
 
@@ -46,15 +46,6 @@ Authentication logs are ingested, analyzed, and visualized to detect brute-force
 * Splunk Enterprise SIEM
 * Linux Auth Logs (`/var/log/auth.log`)
 * VirtualBox Lab Environment
-
-
-# Linux SSH Attack Monitoring — Splunk SIEM Lab
-
-## 📌 Project Overview
-
-This project demonstrates a real-world **SOC (Security Operations Center) detection lab** built using **Splunk SIEM** to monitor and analyze SSH authentication activity on a Linux victim machine.
-
-The lab simulates attacker behavior from Kali Linux and detects it on an Ubuntu system using log ingestion, SPL queries, and security dashboards.
 
 ---
 
@@ -85,16 +76,6 @@ Dashboards + Detection Analytics
        height="200"/>
 </p>
 
-## 🎯 Objectives
-
-* Simulate SSH attacks from attacker machine
-* Monitor authentication logs on victim machine
-* Detect failed & successful logins
-* Identify attacker IP address
-* Analyze targeted usernames
-* Build SOC-style security dashboards
-
----
 
 ## 🖥️ Lab Environment
 
